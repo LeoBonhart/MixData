@@ -1,0 +1,14 @@
+@import "site-prop.scss";
+@import "site-color.scss";
+@import "btns.scss";
+
+@mixin text($size, $lh: 1, $weight: normal) {
+    font-size: $size;
+    line-height: $lh;
+    font-weight: $weight;
+}
+@mixin textOverflow() {
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}

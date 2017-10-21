@@ -1,0 +1,48 @@
+[
+  {
+    "outputFileName": "dist/lib/js/jquery.min.js",
+    "inputFiles": [
+      "src/assets/lib/jquery/dist/jquery.js",
+      "src/assets/lib/jquery-zclip/jquery.zclip.js"
+    ]
+  },
+  {
+    "outputFileName": "dist/lib/css/font-awesome.min.css",
+    "inputFiles": [
+      "src/assets/lib/font-awesome/css/font-awesome.css"
+    ]
+  },
+  {
+    "outputFileName": "dist/lib/css/bootstrap.min.css",
+    "inputFiles": [
+      "src/assets/lib/bootstrap/dist/css/bootstrap.css"
+    ]
+  },
+  {
+    "outputFileName": "dist/lib/js/bootstrap.min.js",
+    "inputFiles": [
+      "src/assets/lib/bootstrap/dist/js/bootstrap.js"
+    ]
+  },
+  {
+    "outputFileName": "dist/js/functions.min.js",
+    "inputFiles": [
+      "src/assets/js/functions.js"
+    ],
+    "minify": {
+      "enabled": false
+    }
+  },
+  {
+    "outputFileName": "dist/css/styles.min.css",
+    "inputFiles": [
+      "src/assets/scss/styles.css"
+    ]
+  },
+  {
+    "outputFileName": "dist/lib/js/tether.min.js",
+    "inputFiles": [
+      "src/assets/lib/tether/dist/js/tether.js"
+    ]
+  }
+]

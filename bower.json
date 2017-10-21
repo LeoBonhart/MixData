@@ -1,0 +1,12 @@
+{
+  "name": "angular",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6",
+    "font-awesome": "font-awsome#v4.7.0",
+    "jquery-zclip": "v1.1.5"
+  },
+  "resolutions": {
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}

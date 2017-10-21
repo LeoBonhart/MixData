@@ -1,0 +1,28 @@
+@import "site-color.scss";
+@import "site-prop.scss";
+
+@mixin mybtn($width, $height, $br-radius: 5px) {
+    width: $width;
+    height: $height;
+    background-color: $btn-add-color;
+    border: 0px solid transparent;
+    border-radius: $br-radius;
+    color: $btn-add-text-color;
+    box-shadow: $mui-b-shadow;
+    transition: $transition;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $btn-add-hover-color;
+        box-shadow: $mui-b-shadow--hover;
+    }
+
+    &:disabled {
+        background-color: grayscale($btn-add-color);
+
+        &:hover {
+            cursor: not-allowed;
+            background-color: mix($btn-add-hover-color,red,30%);
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@import "../mixin/mixins.scss";
+
+.main-module {
+    position: relative;
+
+    .main-module__button {
+        @include mybtn(100%,30px,0);
+        @include textOverflow;
+
+        &.main-module__button_ico {
+            @include mybtn(30px,30px,50%);
+        }
+    }
+
+    .main-module__textarea {
+        height: 80vh;
+        width: 100%;
+        box-shadow: $mui-b-shadow;
+    }
+
+    .main-module__input{
+        width:auto;
+    }
+}
+.align-right{
+    float:right;
+}
+.my-v-align {
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 0px;
+        vertical-align: middle;
+        margin-right: -4px;
+    }
+}

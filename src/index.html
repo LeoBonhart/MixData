@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test MixData</title>
+        <base href="/" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="https://www.mixdata.ru/import-yandex-direct-to-google-analytics/images/mixdata-ico.ico" type="image/ico">
+        <link href="dist/lib/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="dist/lib/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="dist/css/styles.min.css" rel="stylesheet" />   
+        
+        <script src="dist/lib/js/jquery.min.js"></script>
+        <script src="dist/lib/js/tether.min.js"></script>
+        <script src="dist/lib/js/bootstrap.min.js"></script>       
+        <script src="dist/js/functions.min.js"></script>
+    </head>
+    <body>
+        <h2 class="text-center mb-5">Тестовое задание MixData</h2>
+        <div class="row main-module">  
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
+                <button class="main-module__button main-module__button_ico main-module__button_undo d-inline-block" title="Отменить - отменяет итерацию (минимум 10 шагов)" disabled="disabled">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                </button>
+                <button class="main-module__button main-module__button_ico main-module__button_forward d-inline-block" title="Повторить - вернуться обратно если отменили итерацию" disabled="disabled">
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </button>
+                <button class="main-module__button main-module__button_ico main-module__button_eraser d-inline-block" title="Очистить поле">
+                    <i class="fa fa-eraser" aria-hidden="true"></i>
+                </button>
+                <button class="main-module__button main-module__button_ico main-module__button_clipboard d-inline-block" title="Скопировать в буфер обмена">
+                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="col-6">
+                <div class="row">                    
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
+                        <h4 class="text-center">Функции обработки текста</h4>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1">
+                        <button class="main-module__button main-module__button_uppercase" title="Все большие буквы (СОК ЦЕНА)">
+                            <i class="fa fa-level-up" aria-hidden="true"></i> ВЕРХНИЙ РЕГИСТР
+                        </button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1">
+                        <button class="main-module__button main-module__button_lowercase" title="Все маленькие буквы (сок цена)">
+                            <i class="fa fa-level-down" aria-hidden="true"></i> нижний регистр
+                        </button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Все слова с большой буквы (Сок Цена)">
+                        <button class="main-module__button main-module__button_capitalize">Заглавное Слово</button>
+                    </div> 
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Первое слово с большой буквы (Сок цена)">
+                        <button class="main-module__button main-module__button_paragraph">Параграф</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Добавить плюсы перед словами (+сОк +цЕНа)">
+                        <button class="main-module__button main-module__button_add-plus">Добавить плюсы</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить плюсы перед словами (сОк цЕНа)">
+                        <button class="main-module__button main-module__button_remove-plus">Удалить плюсы</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Добавить кавычки в начале и в конце строки (&#34сОк цЕНа&#34)">
+                        <button class="main-module__button main-module__button_row-quotes">Строка в ковычках</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Добавить квадратные скобки  в начале и в конце строки ([сОк цЕНа])">
+                        <button class="main-module__button main-module__button_row-brackets">Строка в квадратных скобках</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Добавить тире в самом начале (-сОк цЕНа)">
+                        <button class="main-module__button main-module__button_before-dash">Добавить тире в самом начале</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить лишние пробелы">
+                        <button class="main-module__button main-module__button_trim">Удалить лишние пробелы</button>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1" title="Добавить квадратные скобки в начале и в конце строки и тире в самом начале (-[сОк цЕНа])">
+                        <button class="main-module__button main-module__button_before-dash-row-brackets">Добавить квадратные скобки в начале и в конце строки и тире в самом начале</button>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1" title="Добавить кавычки в начале и в конце строки и тире в самом начале (-&#34сОк цЕНа&#34)">
+                        <button class="main-module__button main-module__button_before-dash-row-quotes">Добавить кавычки в начале и в конце строки и тире в самом начале</button>
+                    </div>                  
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1" title="Удалить все справа в строке после символов &#34пробел дефис&#34, включая сам дефис (было: сок цена -вишня, стало: сок цена)">
+                        <button class="main-module__button main-module__button_remove-after-dash">Удалить все справа в строке после символов &#34пробел дефис&#34, включая сам дефис</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить табуляцию">
+                        <button class="main-module__button main-module__button_remove-tab">Удалить табуляцию</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить дубликаты (имеются в виду дубликаты строк)">
+                        <button class="main-module__button main-module__button_remove-dup">Удалить дубликаты</button>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1" title="Заменить пробелы на знак подчеркивания (сОк_цЕНа)">
+                        <button class="main-module__button main-module__button_transform-space">Заменить пробелы на знак подчеркивания</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить спец символы. Спец символы ()`~!@#$%^&*_=+[]\{}|;':&#34,/<>?">
+                        <button class="main-module__button main-module__button_remove-spec-chars">Удалить спец символы</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Заменить спец символы на пробелы">
+                        <button class="main-module__button main-module__button_transform-spec-chars-to-space">Спец символы на пробелы</button>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
+                        <h4 class="text-center">Поиск с заменой</h4>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
+                        <div class="mx-auto d-table">
+                            <div class="form-group d-inline-block">
+                                <input type="text" name="search" id="search" class="main-module__input main-module__input_search form-control" placeholder="Поиск..." value="" />
+                            </div>
+                            <div class="d-inline-block">
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </div>
+                            <div class="form-group d-inline-block">
+                                <input type="text" name="replace" id="replace" class="main-module__input main-module__input_replace form-control" placeholder="Замена..." value="" />
+                            </div>
+                            <button class="main-module__button main-module__button_ico main-module__button_search d-inline-block my-auto" title="Поиск с заменой">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>                        
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
+                        <h4 class="text-center">Сортировка строк</h4>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Сортировать А-Я">
+                        <button class="main-module__button main-module__button_sort">А-Я</button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Сортировать Я-А">
+                        <button class="main-module__button main-module__button_reverce-sort">Я-А</button>
+                    </div>
+                </div>  
+            </div>
+            <div class="col-6">
+                <textarea id="text" name="text" class="main-module__textarea" rows="10000">
+            </textarea>
+            </div>  
+        </div>   
+    </body>
+</html>
