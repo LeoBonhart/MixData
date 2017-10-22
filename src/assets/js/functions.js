@@ -102,6 +102,7 @@ function capitalize() {
     tempList = getArrayRowsTextArea();
     saveChanges(tempList);
     for (let row of tempList) {
+        row = row.toLowerCase();
         list.push(  row
                     .split(' ')
                     .map(el => {
@@ -117,6 +118,7 @@ function paragraph() {
     tempList = getArrayRowsTextArea();
     saveChanges(tempList);
     for (let row of tempList) {
+        row = row.toLowerCase();
         let firstLetter = '';
         let i = 0;
         for (i = 0, len = row.length; i < len; i++) {
