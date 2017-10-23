@@ -181,13 +181,11 @@ function rowBrackets() {
 function beforeDash() {
     helperRowInnerOuterChar('-', '');
 }
-function beforeDashRowBrackets() {   
-    rowBrackets();
-    beforeDash();
+function beforeDashRowBrackets() { 
+    helperRowInnerOuterChar('-[', ']');
 }
 function beforeDashRowQuotes() {
-    rowQuotes();
-    beforeDash();
+    helperRowInnerOuterChar('-"', '"');
 }
 function removeAfterDash() {
     let tempList = [];
