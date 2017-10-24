@@ -15,14 +15,19 @@
         cursor: pointer;
         background-color: $btn-add-hover-color;
         box-shadow: $mui-b-shadow--hover;
+        color: $btn-add-text-color-hover;
     }
-
+    &:focus{
+        outline:none;
+    }
     &:disabled {
-        background-color: grayscale($btn-add-color);
+        background-color: $site-green-color-dark;
+        color: $site-text-color-btn-disabled;
 
         &:hover {
             cursor: not-allowed;
-            background-color: mix($btn-add-hover-color,red,30%);
+            background-color: mix($site-green-color-dark,red,90%);
+            box-shadow: $mui-b-shadow;
         }
     }
 }

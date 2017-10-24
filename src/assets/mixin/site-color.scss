@@ -1,14 +1,21 @@
 $site-green-color:rgb(135, 180, 72);
+$site-green-color-dark: darken($site-green-color,10%);
 $site-text-color:rgb(28, 37, 52);
+$site-text-color-btn-disabled: darken($site-green-color,20%);
+$input-color: lighten($site-green-color,40%);
+$btn-add-color: $site-green-color;
+$btn-add-hover-color: lighten($site-green-color,10%);
+$btn-add-text-color: lighten($site-green-color,40%);
+$btn-add-text-color-hover: lighten($site-green-color,50%);
+$bg-color: rgb(224, 233, 248);
+
 $site-title-text-color:rgb(124, 134, 149);
 $separator-color:rgb(224, 226, 230);
 $footer-color: rgb(183,191,205);
 
 $color-left-bar-links: rgb(183, 191, 205);
 
-$btn-add-color: $site-green-color;
-$btn-add-hover-color: lighten($site-green-color,10%);
-$btn-add-text-color:white;
+
 
 $services-conteiner-bg-color:white;
 $services-conteiner-border-color:rgb(224,226,230);

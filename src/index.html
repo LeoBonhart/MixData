@@ -8,124 +8,209 @@
         <link rel="shortcut icon" href="https://www.mixdata.ru/import-yandex-direct-to-google-analytics/images/mixdata-ico.ico" type="image/ico">
         <link href="dist/lib/css/bootstrap.min.css" rel="stylesheet" />
         <link href="dist/lib/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="dist/css/styles.min.css" rel="stylesheet" />   
+        <link href="dist/css/styles.min.css" rel="stylesheet" />
+        <link href="dist/lib/css/material.min.css" rel="stylesheet" />         
         
         <script src="dist/lib/js/jquery.min.js"></script>
         <script src="dist/lib/js/tether.min.js"></script>
-        <script src="dist/lib/js/bootstrap.min.js"></script>       
+        <script src="dist/lib/js/bootstrap.min.js"></script>   
+        <script src="dist/lib/js/material.min.js"></script>   
+       
         <script src="dist/js/functions.min.js"></script>
     </head>
-    <body>
-        <h2 class="text-center mb-5">Тестовое задание MixData</h2>
-        <div class="row main-module">  
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
-                <button class="main-module__button main-module__button_ico main-module__button_undo d-inline-block" title="Отменить - отменяет итерацию (минимум 10 шагов)" disabled="disabled">
-                    <i class="fa fa-undo" aria-hidden="true"></i>
-                </button>
-                <button class="main-module__button main-module__button_ico main-module__button_forward d-inline-block" title="Повторить - вернуться обратно если отменили итерацию" disabled="disabled">
-                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </button>
-                <button class="main-module__button main-module__button_ico main-module__button_eraser d-inline-block" title="Очистить поле">
-                    <i class="fa fa-eraser" aria-hidden="true"></i>
-                </button>
-                <button class="main-module__button main-module__button_ico main-module__button_clipboard d-inline-block" title="Скопировать в буфер обмена">
-                    <i class="fa fa-clipboard" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="col-6">
-                <div class="row">                    
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
-                        <h4 class="text-center">Функции обработки текста</h4>
+    <body>        
+        <div class="row main-module mx-auto p-0"> 
+            <div class="row mui-panel p-0 w-100 m-0">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 main-module__main-menu m-0">
+                    <h3 class="text-center m-0 p-0">Тестовое задание MixData</h3>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 main-module__main-menu d-flex align-items-start flex-row m-0">
+ 
+                    <button id="undo" class="main-module__button main-module__button_ico main-module__button_undo my-auto mr-1" title="Назад" disabled="disabled">
+                        <i class="fa fa-undo" aria-hidden="true"></i>
+                    </button>
+
+                    <button id="forward" class="main-module__button main-module__button_ico main-module__button_forward my-auto mr-1" title="Вперед" disabled="disabled">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+
+                    <button id="eraser" class="main-module__button main-module__button_ico main-module__button_eraser my-auto mr-1">
+                        <i class="fa fa-eraser" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="eraser">
+                        Очистить поле
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1">
-                        <button class="main-module__button main-module__button_uppercase" title="Все большие буквы (СОК ЦЕНА)">
-                            <i class="fa fa-level-up" aria-hidden="true"></i> ВЕРХНИЙ РЕГИСТР
+
+                    <button class="main-module__button main-module__button_ico main-module__button_clipboard my-auto mr-1">
+                        <i class="fa fa-clipboard" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="zclip-ZeroClipboardMovie_1">
+                        Скопировать в буфер обмена
+                    </div>
+                     
+                    <div class="ml-auto my-auto">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label main-module__input">
+                            <input class="mdl-textfield__input main-module__input_search" type="text" name="search" id="search">
+                            <label class="mdl-textfield__label" for="search">Поиск</label>
+                        </div>
+                        <div class="d-inline-block">
+                            <i class="fa fa-arrow-right search-arrow" aria-hidden="true"></i>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label main-module__input">
+                            <input class="mdl-textfield__input main-module__input_replace" type="text" name="replace" id="replace">
+                            <label class="mdl-textfield__label" for="replace">Замена</label>
+                        </div>
+
+                        <button id="search-btn" class="main-module__button main-module__button_ico main-module__button_search d-inline-block my-auto">
+                            <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
+                        <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="search-btn">
+                            Поиск с заменой
+                        </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1">
-                        <button class="main-module__button main-module__button_lowercase" title="Все маленькие буквы (сок цена)">
-                            <i class="fa fa-level-down" aria-hidden="true"></i> нижний регистр
-                        </button>
+                    
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 m-0 main-module__menu">
+                    <button id="text-menu" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="fa fa-text-height" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="text-menu">
+                        Редактировать текст
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Все слова с большой буквы (Сок Цена)">
-                        <button class="main-module__button main-module__button_capitalize">Заглавное Слово</button>
-                    </div> 
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Первое слово с большой буквы (Сок цена)">
-                        <button class="main-module__button main-module__button_paragraph">Параграф</button>
+                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                        for="text-menu">
+                        <li id="uppercase" class="mdl-menu__item main-module__button_uppercase">ВЕРХНИЙ РЕГИСТР</li>
+                        <li id="lowercase" class="mdl-menu__item mdl-menu__item--full-bleed-divider main-module__button_lowercase">нижний регистр</li>
+                        <li id="paragraph" class="mdl-menu__item main-module__button_paragraph">Как в предложениях</li>
+                        <li id="capitalize" class="mdl-menu__item main-module__button_capitalize">Начинать С Прописных</li>
+                    </ul>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="uppercase">
+                        Все большие буквы (СОК ЦЕНА)
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Добавить плюсы перед словами (+сОк +цЕНа)">
-                        <button class="main-module__button main-module__button_add-plus">Добавить плюсы</button>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="lowercase">
+                        Все маленькие буквы (сок цена)
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить плюсы перед словами (сОк цЕНа)">
-                        <button class="main-module__button main-module__button_remove-plus">Удалить плюсы</button>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="paragraph">
+                        Все слова с большой буквы (Сок Цена)
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Добавить кавычки в начале и в конце строки (&#34сОк цЕНа&#34)">
-                        <button class="main-module__button main-module__button_row-quotes">Строка в ковычках</button>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="capitalize">
+                        Первое слово с большой буквы (Сок цена)
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Добавить квадратные скобки  в начале и в конце строки ([сОк цЕНа])">
-                        <button class="main-module__button main-module__button_row-brackets">Строка в квадратных скобках</button>
+
+                    <button id="plus" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="plus">
+                        Добавить плюсы /<br> Удалить плюсы
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Добавить тире в самом начале (-сОк цЕНа)">
-                        <button class="main-module__button main-module__button_before-dash">Добавить тире в самом начале</button>
+                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                        for="plus">
+                        <li id="add-plus" class="mdl-menu__item main-module__button_uppercase main-module__button_add-plus">Добавить плюсы</li>
+                        <li id="remove-plus" class="mdl-menu__item main-module__button_paragraph main-module__button_remove-plus">Удалить плюсы</li>
+                    </ul>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="add-plus">
+                        Добавить плюсы перед словами (+сОк +цЕНа)
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить лишние пробелы">
-                        <button class="main-module__button main-module__button_trim">Удалить лишние пробелы</button>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="remove-plus">
+                        Удалить плюсы перед словами (сОк цЕНа)
                     </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1" title="Добавить квадратные скобки в начале и в конце строки и тире в самом начале (-[сОк цЕНа])">
-                        <button class="main-module__button main-module__button_before-dash-row-brackets">Добавить квадратные скобки в начале и в конце строки и тире в самом начале</button>
+
+                    <button id="sort-a-z" class="mdl-button mdl-js-button mdl-button--icon main-module__button_sort">
+                        <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sort-a-z">
+                        Сортировать А-Я
                     </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1" title="Добавить кавычки в начале и в конце строки и тире в самом начале (-&#34сОк цЕНа&#34)">
-                        <button class="main-module__button main-module__button_before-dash-row-quotes">Добавить кавычки в начале и в конце строки и тире в самом начале</button>
-                    </div>                  
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1" title="Удалить все справа в строке после символов &#34пробел дефис&#34, включая сам дефис (было: сок цена -вишня, стало: сок цена)">
-                        <button class="main-module__button main-module__button_remove-after-dash">Удалить все справа в строке после символов &#34пробел дефис&#34, включая сам дефис</button>
+
+                    <button id="sort-z-a" class="mdl-button mdl-js-button mdl-button--icon main-module__button_reverce-sort">
+                        <i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="sort-z-a">
+                        Сортировать Я-А
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить табуляцию">
-                        <button class="main-module__button main-module__button_remove-tab">Удалить табуляцию</button>
+
+                    <button id="row-menu" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="row-menu">
+                        Редактировать строки
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить дубликаты (имеются в виду дубликаты строк)">
-                        <button class="main-module__button main-module__button_remove-dup">Удалить дубликаты</button>
+                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                        for="row-menu">
+                        <li id="row-quotes" class="mdl-menu__item main-module__button_row-quotes">"Строка в ковычках"</li>
+                        <li id="row-brackets" class="mdl-menu__item main-module__button_row-brackets">[Строка в квадратных скобках]</li>
+                        <li id="before-dash" class="mdl-menu__item mdl-menu__item--full-bleed-divider main-module__button_before-dash">-Дефис в начале</li>
+                        <li id="before-dash-row-quotes" class="mdl-menu__item main-module__button_before-dash-row-quotes">-"Дефис и ковычки"</li>
+                        <li id="before-dash-row-brackets" class="mdl-menu__item main-module__button_before-dash-row-brackets">-[Дефис и квадратные скобки]</li>
+                    </ul>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="row-quotes">
+                        Добавить кавычки в начале и в конце строки ("сОк цЕНа")
                     </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1" title="Заменить пробелы на знак подчеркивания (сОк_цЕНа)">
-                        <button class="main-module__button main-module__button_transform-space">Заменить пробелы на знак подчеркивания</button>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="row-brackets">
+                        Добавить квадратные скобки в начале и в конце строки ([сОк цЕНа])
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Удалить спец символы. Спец символы ()`~!@#$%^&*_=+[]\{}|;':&#34,/<>?">
-                        <button class="main-module__button main-module__button_remove-spec-chars">Удалить спец символы</button>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="before-dash">
+                        Добавить дефис в самом начале (-сОк цЕНа)
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Заменить спец символы на пробелы">
-                        <button class="main-module__button main-module__button_transform-spec-chars-to-space">Спец символы на пробелы</button>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="before-dash-row-quotes">
+                        Добавить кавычки в начале и в конце строки и дефис в самом начале (-"сОк цЕНа")
                     </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
-                        <h4 class="text-center">Поиск с заменой</h4>
+                    <div class="mdl-tooltip mdl-tooltip--right" data-mdl-for="before-dash-row-brackets">
+                        Добавить квадратные скобки в начале и в конце строки и дефис в самом начале (-[сОк цЕНа])
                     </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
-                        <div class="mx-auto d-table">
-                            <div class="form-group d-inline-block">
-                                <input type="text" name="search" id="search" class="main-module__input main-module__input_search form-control" placeholder="Поиск..." value="" />
-                            </div>
-                            <div class="d-inline-block">
-                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                            </div>
-                            <div class="form-group d-inline-block">
-                                <input type="text" name="replace" id="replace" class="main-module__input main-module__input_replace form-control" placeholder="Замена..." value="" />
-                            </div>
-                            <button class="main-module__button main-module__button_ico main-module__button_search d-inline-block my-auto" title="Поиск с заменой">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </button>
-                        </div>                        
+
+                    <button id="space" class="mdl-button mdl-js-button mdl-button--icon">
+                        
+                        <img src="dist/svg/space.svg" />
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="space">
+                        Обработка пробелов
                     </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-1">
-                        <h4 class="text-center">Сортировка строк</h4>
+                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                        for="space">
+                        <li class="mdl-menu__item main-module__button_trim">Удалить лишние пробелы</li>
+                        <li class="mdl-menu__item main-module__button_transform-space">Заменить пробелы на знак подчеркивания</li>
+                    </ul>
+
+                    <button id="trash-dash" class="mdl-button mdl-js-button mdl-button--icon main-module__button_remove-after-dash">
+                        <i class="fa fa-minus-square" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="trash-dash">
+                       Удалить все после дефиса, включая сам дефис
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Сортировать А-Я">
-                        <button class="main-module__button main-module__button_sort">А-Я</button>
+
+                    <button id="trash-tab" class="mdl-button mdl-js-button mdl-button--icon main-module__button_remove-tab">
+                        <i class="fa fa-outdent" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="trash-tab">
+                        Удалить табуляцию
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-1" title="Сортировать Я-А">
-                        <button class="main-module__button main-module__button_reverce-sort">Я-А</button>
+
+                    <button id="trash-dup" class="mdl-button mdl-js-button mdl-button--icon main-module__button_remove-dup">
+                        <i class="fa fa-files-o" aria-hidden="true"></i>
+
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="trash-dup">
+                        Удалить дубликаты
                     </div>
-                </div>  
-            </div>
-            <div class="col-6">
+                    
+                    <button id="spec" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" data-mdl-for="spec">
+                        Обработка спец символов <br />
+                        ()`~!@#$%^&*_=+[]\{}|;':&#34,/<>?">
+                    </div>
+                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                        for="spec">
+                        <li class="mdl-menu__item main-module__button_remove-spec-chars">Удалить спец. символы</li>
+                        <li class="mdl-menu__item main-module__button_transform-spec-chars-to-space">Заменить cпец. символы на пробелы</li>
+                    </ul>
+                    
+                </div>
+            </div>          
+            
+            <div class="col-10 mx-auto">
                 <textarea id="text" name="text" class="main-module__textarea" rows="10000">
             </textarea>
             </div>  
